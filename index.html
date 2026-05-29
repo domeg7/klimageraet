@@ -30,6 +30,34 @@
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/hero-v5.css">
+<style>
+  /* Inline-Overrides: kein Cache-Problem, höchste Priorität */
+  html, body { background: #04080e !important; }
+  .nav {
+    position: fixed !important;
+    top: 0 !important; left: 0 !important; right: 0 !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border-bottom-color: transparent !important;
+    transition: background .4s ease, backdrop-filter .4s ease, border-color .4s ease !important;
+  }
+  .nav .nav__name, .nav .nav__by, .nav .nav__links a {
+    color: rgba(255,255,255,.82) !important;
+  }
+  .nav .nav__cta {
+    border-color: rgba(255,255,255,.32) !important;
+    color: rgba(255,255,255,.82) !important;
+    background: rgba(255,255,255,.08) !important;
+  }
+  .nav--scrolled {
+    background: rgba(6,8,16,.82) !important;
+    backdrop-filter: blur(24px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+    border-bottom-color: rgba(255,255,255,.08) !important;
+  }
+</style>
 
 <script type="application/ld+json">
 {
@@ -74,52 +102,20 @@
         "availability": "https://schema.org/InStock",
         "seller": { "@id": "https://das-klimageraet.ch/#business" }
       }
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Wie viel kostet ein X-One Klimagerät?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Ein X-One Klimagerät kostet CHF 3'050.– pro Gerät (Stückpreis exkl. MwSt.). Kosten für Bohrung, Installation und Wartung werden separat auf Anfrage offeriert." }
-        },
-        {
-          "@type": "Question",
-          "name": "Wie lange dauert die Installation eines X-One Klimagerätes?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Die standardisierte Installation und Inbetriebnahme dauern rund zwei Stunden pro Gerät. Bei den Montagearbeiten entsteht möglichst wenig Staub und der laufende Betrieb wird kaum beeinträchtigt." }
-        },
-        {
-          "@type": "Question",
-          "name": "Für welche Raumgrösse eignet sich das X-One Klimagerät?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Mit einer Kühlleistung von 2.3 kW (max. 3.1 kW) eignet sich das X-One Klimagerät für Räume bis rund 40 m². Vor dem Einbau empfehlen wir eine exakte Kühllastberechnung." }
-        },
-        {
-          "@type": "Question",
-          "name": "Wie viele Klimageräte hat Apitec bereits installiert?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Apitec AG hat zusammen mit der Partnerfirma rund 3'000 Klimageräte ohne Aussenteil in der ganzen Schweiz installiert — in Privathäusern, Büros, Hotels und im Gesundheitswesen." }
-        },
-        {
-          "@type": "Question",
-          "name": "Warum hat das X-One Klimagerät keine Aussenteil?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Sämtliche Komponenten befinden sich kompakt im Geräteinneren. Nach aussen sind nur zwei kleine, kaum erkennbare Luftklappen sichtbar. Dadurch bleibt die Gebäudefassade unverändert." }
-        }
-      ]
     }
   ]
 }
 </script>
 </head>
 <body>
+<script>document.documentElement.style.background='#04080e';document.body&&(document.body.style.background='#04080e');</script>
 
 <a class="skip-link" href="#main">Zum Inhalt springen</a>
 
-<header class="nav">
+<header class="nav" id="site-nav">
   <div class="nav__inner">
     <a href="#" class="nav__brand" aria-label="X-One von Apitec AG">
-      <svg class="nav__logo" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
-        <rect width="32" height="32" rx="8" fill="#2D9BEA"/>
-        <text x="16" y="22" font-family="Manrope,sans-serif" font-size="18" font-weight="700" fill="white" text-anchor="middle">X</text>
-      </svg>
+     
       <span class="nav__name">X-One</span>
       <span class="nav__by">by Apitec</span>
     </a>
@@ -145,37 +141,52 @@
 
 <main id="main">
 
-  <!-- ============ HERO ============ -->
-  <section class="hero">
-    <div class="hero__bg" aria-hidden="true">
-      <div class="hero__blob hero__blob--1"></div>
-      <div class="hero__blob hero__blob--2"></div>
-      <div class="hero__grid-lines"></div>
+  <!-- ============ HERO V5 — Video-Hintergrund · Layout wie Index ============ -->
+  <section class="hero hero-v5" id="hero-v5-section">
+
+    <!-- Video-Hintergrund -->
+    <video
+      class="hero-v5__video"
+      autoplay
+      muted
+      loop
+      playsinline
+      aria-hidden="true"
+      preload="auto">
+      <source src="assets/images/wasserfall-kuehle.mp4" type="video/mp4">
+    </video>
+
+    <!-- Overlay: abgedunkelt gegen unten -->
+    <div class="hero-v5__overlay" aria-hidden="true"></div>
+
+    <!-- Dampf-/Nebelschwaden -->
+    <div class="hero-v5__steam" aria-hidden="true">
+      <span></span><span></span><span></span><span></span>
     </div>
 
-    <div class="hero__inner">
+    <div class="hero-v5__inner">
 
-      <div class="hero__text">
-        <h1 class="hero__title">
+      <div class="hero-v5__text">
+        <h1 class="hero-v5__title">
           Das Klimagerät
-          <span class="hero__title-accent">ohne Ausseneinheit.</span>
+          <span class="hero-v5__title-accent">ohne Ausseneinheit.</span>
         </h1>
 
-        <p class="hero__sub">
+        <p class="hero-v5__sub">
           X-One sorgt für ein behagliches Raumklima an heissen Sommertagen. Dank der kompakten Bauweise gibt es keine Ausseneinheit — die Luftklappen an der Fassade sind kaum erkennbar. Leise. Elegant. Energieeffizient.
         </p>
 
-        <div class="hero__actions">
+        <div class="hero-v5__actions">
           <a class="btn btn--primary" href="#kontakt">
             Beratungsgespräch vereinbaren
             <span class="btn__arrow">→</span>
           </a>
-          <a class="btn btn--ghost" href="#produkt">
+          <a class="btn btn--outline-light" href="#produkt">
             Wie es funktioniert
           </a>
         </div>
 
-        <div class="hero__stats">
+        <div class="hero-v5__stats">
           <div class="stat">
             <span class="stat__num">≈ 3'000</span>
             <span class="stat__lbl">Geräte in der Schweiz installiert</span>
@@ -191,20 +202,27 @@
         </div>
       </div>
 
-      <div class="hero__product">
-        <div class="hero__product-glow"></div>
-        <img src="assets/images/produkt-xone.png" alt="X-One Klimagerät ohne Ausseneinheit, weisses Metallgehäuse" class="hero__product-img">
-        <div class="hero__product-tags">
-          <span class="tag tag--top">
-            <span class="tag__dot"></span>
-            Inverter-Technologie
+      <div class="hero-v5__product">
+        <div class="hero-v5__product-glow"></div>
+        <img
+          src="assets/images/produkt-xone.png"
+          alt="X-One Klimagerät ohne Ausseneinheit, weisses Metallgehäuse"
+          class="hero-v5__product-img"
+          fetchpriority="high">
+
+        <!-- Callouts -->
+        <div class="hero-v5__tags">
+          <span class="v5-tag v5-tag--top">
+            <span class="v5-tag__dot"></span>
+            Leiser Betrieb
+          
           </span>
-          <span class="tag tag--mid">
-            <span class="tag__dot"></span>
+          <span class="v5-tag v5-tag--mid">
+            <span class="v5-tag__dot"></span>
             Metallgehäuse, kein Plastik
           </span>
-          <span class="tag tag--bot">
-            <span class="tag__dot"></span>
+          <span class="v5-tag v5-tag--bot">
+            <span class="v5-tag__dot"></span>
             Touch · Remote · App
           </span>
         </div>
@@ -213,9 +231,9 @@
     </div>
 
     <!-- Featured-in strip -->
-    <div class="hero__featured">
-      <span class="hero__featured-label">Im Einsatz bei</span>
-      <div class="hero__featured-logos">
+    <div class="hero-v5__featured">
+      <span class="hero-v5__featured-label">Im Einsatz bei</span>
+      <div class="hero-v5__featured-logos">
         <span>Eurotel Montreux</span>
         <span class="dot">·</span>
         <span>Hotel Bellerive Lausanne</span>
@@ -227,6 +245,7 @@
         <span>Go2Nails Beauty Lounge</span>
       </div>
     </div>
+
   </section>
 
   <!-- ============ PROBLEM ============ -->
@@ -285,10 +304,46 @@
             <span class="video__label-title">Klimagerät X-One — die Vorteile</span>
           </span>
         </button>
-        <a class="video__external" href="https://www.youtube.com/watch?v=8Pr7V9y3Nm0" target="_blank" rel="noopener">
-          Auf YouTube öffnen
-          <span aria-hidden="true">↗</span>
-        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RAUMGRÖSSE / PROJEKTIERUNG ============ -->
+  <section class="raumgroesse" id="raumgroesse">
+    <div class="container">
+      <div class="raumgroesse__card">
+
+        <div class="raumgroesse__head">
+          <span class="kicker">Richtig dimensionieren</span>
+          <h2 class="h2">
+            Die richtige Raumgrösse —
+            <span class="text-accent">entscheidend für Effizienz und Lebensdauer.</span>
+          </h2>
+          <p class="lead">
+            Wir empfehlen unseren Endkunden, vor dem Einbau <strong>unbedingt eine exakte Kühllastberechnung</strong> durchführen zu lassen. Geräte mit einer Kühlleistung von 2,3 kW (max. 3,1 kW) sollten nur in Ausnahmefällen Räume über 40 m² abdecken. In zu grossen Räumen werden zwar angenehme Temperaturen erreicht, es treten jedoch typische Probleme auf:
+          </p>
+        </div>
+
+        <ul class="raumgroesse__list">
+          <li>
+            <strong>Kürzere Lebensdauer</strong>
+            <p>Der Kompressor läuft dauernd auf höchster Stufe und wird zu stark beansprucht.</p>
+          </li>
+          <li>
+            <strong>Höhere Kosten &amp; mehr Lärm</strong>
+            <p>Volllast statt Sparmodus treibt Energiekosten und Lautstärke hoch — Richtwerte und Nachbarn leiden.</p>
+          </li>
+          <li>
+            <strong>Kondenswasser</strong>
+            <p>Zu viel Kondensat kann nicht verdampfen — ohne zusätzlichen Ablauf läuft Wasser auf den Boden.</p>
+          </li>
+        </ul>
+
+        <p class="raumgroesse__note">
+          Bei Fragen zur Projektierung für das Klimagerät ohne Aussenteil unterstützen wir Sie gerne.
+          <a href="#kontakt">Jetzt Beratung anfragen <span aria-hidden="true">→</span></a>
+        </p>
+
       </div>
     </div>
   </section>
@@ -414,15 +469,12 @@
           <div class="prinzip__visual-frame">
             <img src="assets/images/fassade-xone.jpg" alt="Hausfassade mit X-One — die zwei Luftklappen sind kaum sichtbar">
 
-            <!-- SVG annotation: line from vents to label box -->
             <svg class="prinzip__svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
               <line x1="32.4" y1="26.7" x2="49.5" y2="43.5" stroke="white" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.95" vector-effect="non-scaling-stroke"/>
             </svg>
 
-            <!-- Circle highlighting the vent area -->
             <span class="prinzip__ring" aria-hidden="true"></span>
 
-            <!-- Callout label -->
             <div class="prinzip__callout">
               <span class="prinzip__callout-num">Ø 110 mm</span>
               <span class="prinzip__callout-lbl">2 Luftklappen — der einzige Eingriff in die Fassade</span>
@@ -481,41 +533,16 @@
           <span class="text-accent">noch nie kühlen.</span>
         </h2>
         <p class="lead">
-          Bei uns bekommen Sie alle Leistungen, die Sie für ein angenehmes Raumklima benötigen, aus einer Hand. Wir achten darauf, dass bei den Montagearbeiten möglichst wenig Staub und Schmutz entsteht und der laufende Betrieb nicht beeinträchtigt wird.
+          Bei uns bekommen Sie alle Leistungen, die Sie für ein angenehmes Raumklima benötigen, aus einer Hand. Ihr Gerät ist in der Regel <strong>innerhalb 2 Stunden installiert</strong>. Wir achten darauf, dass bei den Montagearbeiten möglichst wenig Staub und Schmutz entsteht und der laufende Betrieb nicht beeinträchtigt wird.
         </p>
       </div>
 
-      <ol class="steps">
-        <li class="step">
-          <span class="step__num">01</span>
-          <div class="step__line" aria-hidden="true"></div>
-          <h3>Planung & Koordination</h3>
-          <p>Mit der Bauherrschaft, Architekt oder Eigentümerschaft — bei Minergie-Bauten besonders sorgfältig.</p>
-        </li>
-        <li class="step">
-          <span class="step__num">02</span>
-          <div class="step__line" aria-hidden="true"></div>
-          <h3>Gerätelieferung aufs Objekt</h3>
-          <p>Wir liefern das Gerät und alle benötigten Materialien direkt zum Einbauort.</p>
-        </li>
-        <li class="step">
-          <span class="step__num">03</span>
-          <div class="step__line" aria-hidden="true"></div>
-          <h3>Bohrungen durch die Aussenwand</h3>
-          <p>Zwei saubere Bohrungen für die Luftklappen — mit Staubschutz und ohne grossen Eingriff.</p>
-        </li>
-        <li class="step">
-          <span class="step__num">04</span>
-          <div class="step__line" aria-hidden="true"></div>
-          <h3>Montage & Inbetriebnahme</h3>
-          <p>Rund zwei Stunden vor Ort. Steckerfertig an einer Steckdose anschliessen — fertig.</p>
-        </li>
-        <li class="step">
-          <span class="step__num">05</span>
-          <h3>Geräteunterhalt & Reinigung</h3>
-          <p>Wir warten unsere Geräte langfristig. Auf Wunsch auch für Fremdmarken.</p>
-        </li>
-      </ol>
+      <figure class="install__infographic">
+        <img
+          src="assets/images/190603_Infographic_Website-min-e1559900070609.png"
+          alt="Installation in 4 Schritten: 1. Zwei Bohrungen in der Aussenwand, 2. Montagevorrichtung befestigen, 3. Klimagerät aufhängen, 4. Kabel an Steckdose anschliessen"
+          loading="lazy">
+      </figure>
 
     </div>
   </section>
@@ -688,7 +715,7 @@
               In unseren Räumlichkeiten wurde es früher rasch sehr warm und stickig. Seitdem wir die Klimageräte von Apitec in unseren Büros und im Sitzungszimmer installiert haben, sind unsere Räume auch an heissen Sommertagen angenehm kühl. <strong>Die Investition hat sich wirklich gelohnt.</strong>
             </blockquote>
             <figcaption>
-              <div class="testi__initial">A</div>
+              <img src="assets/images/200x200_Andre-Knuesel-150x150.jpg" alt="André Knüsel">
               <div>
                 <strong>André Knüsel</strong>
                 <span>Inhaber ACORUS-TREUHAND AG</span>
@@ -698,6 +725,48 @@
         </div>
       </div>
 
+    </div>
+  </section>
+
+  <!-- ============ ENERGIEEFFIZIENZ ============ -->
+  <section class="effizienz" id="effizienz">
+    <div class="container">
+      <div class="effizienz__grid">
+
+        <figure class="effizienz__visual">
+          <img
+            src="assets/images/Energieeffizenz-xone-klimageraet.jpeg"
+            alt="Person betrachtet auf einem Tablet die Energieeffizienz-Skala eines Hauses von A bis G"
+            loading="lazy">
+        </figure>
+
+        <div class="effizienz__text">
+          <span class="kicker">Energieeffizienz</span>
+          <h2 class="h2">
+            Der Umwelt und Ihrem
+            <span class="text-accent">Portemonnaie zuliebe.</span>
+          </h2>
+          <p class="lead">
+            Im Gegensatz zu herkömmlichen Klimaanlagen (Ein-/Aus-Betrieb) passen Klimageräte mit Inverter-Technologie die Drehgeschwindigkeit des Kompressors — und somit die Kühlleistung — den vorherrschenden klimatischen Bedingungen an.
+          </p>
+
+          <ul class="effizienz__benefits">
+            <li>
+              <span class="effizienz__check" aria-hidden="true">✓</span>
+              <span><strong>bis zu 30 %</strong> weniger Betriebskosten</span>
+            </li>
+            <li>
+              <span class="effizienz__check" aria-hidden="true">✓</span>
+              <span>erheblich tiefere Geräuschpegel</span>
+            </li>
+            <li>
+              <span class="effizienz__check" aria-hidden="true">✓</span>
+              <span>deutlich schnelleres Erreichen der gewünschten Raumtemperatur</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
     </div>
   </section>
 
@@ -757,10 +826,10 @@
           </figcaption>
         </figure>
         <div class="about__text">
-          <span class="kicker">Wer wir sind</span>
+          
           <h2 class="h2">
-            Von Mensch zu Mensch —
-            <span class="text-accent">inhabergeführt seit 2007.</span>
+            Wer wir sind 
+          
           </h2>
           <p>
             Philipp Egli gründete im Jahre 2007 das in Meggen (Kanton Luzern) ansässige Unternehmen Apitec AG. Noch heute ist Apitec ein inhabergeführtes Unternehmen. Der erfahrene Geschäftsführer und Inhaber ist bereits seit über <strong>25 Jahren in der Gebäudetechnikbranche</strong> tätig.
@@ -799,6 +868,10 @@
         <details>
           <summary>Für welche Raumgrösse ist das Gerät geeignet?</summary>
           <p>Mit 2.3 kW (max. 3.1 kW) Kühlleistung für Räume bis rund 40 m². Bei grösseren Räumen empfehlen wir vorab eine Kühllastberechnung.</p>
+        </details>
+        <details>
+          <summary>Was passiert, wenn der Raum zu gross ist?</summary>
+          <p>Wir empfehlen vor dem Einbau unbedingt eine exakte Kühllastberechnung. In zu grossen Räumen (über 40 m²) treten typische Probleme auf: kürzere Lebensdauer, weil der Kompressor dauernd auf höchster Stufe läuft; höhere Energiekosten und mehr Lärm — Aussengeräusche können Richtwerte übersteigen und zu Reklamationen führen; und vermehrt Kondenswasser, das ohne zusätzliche Bohrung für den Kondensatablauf überlaufen kann. Bei Fragen zur Projektierung unterstützen wir Sie gerne.</p>
         </details>
         <details>
           <summary>Wie laut ist das Gerät im Schlafzimmer?</summary>
@@ -861,12 +934,10 @@
           </div>
 
           <form class="cta__form" id="contact-form" novalidate>
-            <!-- Web3Forms access key — bitte durch eigenen Key ersetzen: https://web3forms.com/ -->
             <input type="hidden" name="access_key" value="94176400-7a34-4de0-8fdf-afd10a86d67f">
             <input type="hidden" name="subject" value="Neue Anfrage über das-klimageraet.ch">
             <input type="hidden" name="from_name" value="X-One · das-klimageraet.ch">
             <input type="hidden" name="redirect" value="false">
-            <!-- Honeypot (Spam-Schutz) -->
             <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 
             <div class="form__head">
@@ -933,12 +1004,8 @@
   <div class="container">
     <div class="footer__grid">
       <div class="footer__brand">
-        <a href="#" class="nav__brand">
-          <svg class="nav__logo" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
-            <rect width="32" height="32" rx="8" fill="#2D9BEA"/>
-            <text x="16" y="22" font-family="Manrope,sans-serif" font-size="18" font-weight="700" fill="white" text-anchor="middle">X</text>
-          </svg>
-          <span class="nav__name">X-One</span>
+        <a href="#" class="footer__logo" aria-label="Apitec AG">
+          <img src="assets/images/Logo-Apitec-AG-500.png" alt="Apitec AG">
         </a>
         <p>Das Klimagerät ohne Ausseneinheit. Eine Produktmarke der Apitec AG, Meggen.</p>
         <p class="footer__tagline">Ihr kompetenter Partner in Sachen Klimageräte &amp; Heizungen.</p>
@@ -962,7 +1029,8 @@
         <p>Apitec AG<br>Sentibühlstrasse 2<br>6045 Meggen</p>
         <p>
           <a href="tel:+41412101500">041 210 15 00</a><br>
-          <a href="mailto:info@apitec.ch">info@apitec.ch</a>
+          <a href="mailto:info@apitec.ch">info@apitec.ch</a><br>
+          <a href="https://www.apitec.ch" target="_blank" rel="noopener">www.apitec.ch</a>
         </p>
       </div>
     </div>
@@ -976,5 +1044,29 @@
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script src="js/main.js"></script>
+<script>
+  /* ── Hero V5: Nav-Glassmorphism beim Scrollen ── */
+  (function () {
+    const nav = document.getElementById('site-nav');
+    if (!nav) return;
+
+    let ticking = false;
+
+    function update() {
+      const pastHero = window.scrollY > window.innerHeight * 0.12;
+      nav.classList.toggle('nav--scrolled', pastHero);
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        requestAnimationFrame(update);
+        ticking = true;
+      }
+    }, { passive: true });
+
+    update();
+  }());
+</script>
 </body>
 </html>
