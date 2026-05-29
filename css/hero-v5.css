@@ -303,7 +303,7 @@ body {
 }
 
 .raumgroesse__card {
-  max-width: 920px;
+  max-width: 1180px;
   margin: 0 auto;
   background: var(--bg-soft);
   border: 1px solid var(--gray-2);
