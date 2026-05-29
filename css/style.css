@@ -2057,6 +2057,88 @@ button { font-family: inherit; }
 }
 
 /* =========================================================
+   LEGAL PAGES (Impressum / Datenschutz)
+   ========================================================= */
+.legal-hero {
+  padding: calc(var(--s-6) + 32px) 0 var(--s-4);
+  background: linear-gradient(180deg, #fff 0%, var(--bg-soft) 100%);
+  border-bottom: 1px solid var(--gray-2);
+}
+.legal-hero__inner {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+.legal-hero .kicker { margin-bottom: 12px; }
+.legal-hero h1 {
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  margin: 0 0 10px;
+}
+.legal-hero p {
+  color: var(--gray-5);
+  margin: 0;
+  font-size: 15px;
+}
+
+.legal {
+  padding: var(--s-5) 0 var(--s-6);
+  background: var(--bg);
+}
+.legal__content {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+.legal__content h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: var(--s-4) 0 12px;
+  letter-spacing: -0.01em;
+}
+.legal__content h2:first-child { margin-top: 0; }
+.legal__content h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: var(--s-3) 0 8px;
+}
+.legal__content p,
+.legal__content li {
+  color: var(--gray-7);
+  line-height: 1.7;
+  font-size: 16px;
+}
+.legal__content p { margin: 0 0 14px; }
+.legal__content ul { padding-left: 20px; margin: 0 0 18px; }
+.legal__content li { margin-bottom: 6px; }
+.legal__content a { color: var(--blue); }
+.legal__content a:hover { color: var(--blue-dark); }
+.legal__address {
+  font-style: normal;
+  line-height: 1.7;
+  color: var(--ink-2);
+  font-size: 16px;
+}
+.legal__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: var(--s-4);
+  font-weight: 600;
+  color: var(--blue);
+}
+.legal__back:hover { color: var(--blue-dark); }
+.legal__updated {
+  margin-top: var(--s-4);
+  font-size: 13.5px;
+  color: var(--gray-5);
+}
+
+/* =========================================================
    RESPONSIVE
    ========================================================= */
 @media (max-width: 1024px) {
