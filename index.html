@@ -115,17 +115,53 @@
 <header class="nav" id="site-nav">
   <div class="nav__inner">
     <a href="#" class="nav__brand" aria-label="X-One von Apitec AG">
-     
-      <span class="nav__name">X-One</span>
-      <span class="nav__by">by Apitec</span>
+      <img src="assets/images/Logo-Apitec-AG-weiss.png" alt="Apitec AG" class="nav__logo" height="28">
     </a>
 
     <nav class="nav__links" aria-label="Hauptnavigation">
-      <a href="#produkt">Produkt</a>
-      <a href="#einsatz">Einsatz</a>
-      <a href="#installation">Installation</a>
-      <a href="#referenzen">Referenzen</a>
-      <a href="#preis">Preis</a>
+      <div class="nav__item">
+        <a href="#produkt" class="nav__top">Produkt <span class="nav__caret" aria-hidden="true">▾</span></a>
+        <div class="nav__drop">
+          <a href="#produkt">6 Gründe</a>
+          <a href="#effizienz">−30 % Strom</a>
+          <a href="#prinzip">Fassade</a>
+          <a href="#installation">Installation</a>
+          <a href="#bedienung">3 Wege</a>
+        </div>
+      </div>
+
+      <div class="nav__item">
+        <a href="#einsatz" class="nav__top">Einsatz <span class="nav__caret" aria-hidden="true">▾</span></a>
+        <div class="nav__drop">
+          <a href="#einsatz">Einsatz-Möglichkeiten</a>
+        </div>
+      </div>
+
+      <div class="nav__item">
+        <a href="#referenzen" class="nav__top">Referenzen <span class="nav__caret" aria-hidden="true">▾</span></a>
+        <div class="nav__drop">
+          <a href="#referenzen">Hotels</a>
+          <a href="#referenzen">Büros</a>
+          <a href="#referenzen">Arztpraxis</a>
+          <a href="#referenzen">Privat</a>
+          <a href="#kundenstimmen">Kundenstimmen</a>
+        </div>
+      </div>
+
+      <div class="nav__item">
+        <a href="#faq" class="nav__top">Fragen <span class="nav__caret" aria-hidden="true">▾</span></a>
+        <div class="nav__drop">
+          <a href="#faq">Häufige Fragen</a>
+          <a href="#preis">Preise</a>
+        </div>
+      </div>
+
+      <div class="nav__item">
+        <a href="#ueber-uns" class="nav__top">Wer wir sind <span class="nav__caret" aria-hidden="true">▾</span></a>
+        <div class="nav__drop">
+          <a href="#ueber-uns">Apitec AG</a>
+        </div>
+      </div>
     </nav>
 
     <a href="#kontakt" class="nav__cta">
@@ -462,7 +498,7 @@
   </section>
 
   <!-- ============ PRINZIP / TECH ============ -->
-  <section class="prinzip">
+  <section class="prinzip" id="prinzip">
     <div class="container">
       <div class="prinzip__grid">
         <figure class="prinzip__visual">
@@ -476,7 +512,7 @@
             <span class="prinzip__ring" aria-hidden="true"></span>
 
             <div class="prinzip__callout">
-              <span class="prinzip__callout-num">Ø 110 mm</span>
+              <span class="prinzip__callout-num">Ø 160 mm</span>
               <span class="prinzip__callout-lbl">2 Luftklappen — der einzige Eingriff in die Fassade</span>
             </div>
           </div>
@@ -485,8 +521,8 @@
         <div class="prinzip__text">
           <span class="kicker">Das Prinzip</span>
           <h2 class="h2">
-            Eine Fassade, die genauso schön bleibt
-            <span class="text-accent">wie sie heute ist.</span>
+            Die Fassade bleibt praktisch unverändert,
+            <span class="text-accent">da es kein Aussengerät braucht.</span>
           </h2>
           <p class="lead">
             Wir haben uns auf Klimageräte ohne Ausseneinheit spezialisiert und haben von diesen Modellen zusammen mit unserer Partnerfirma <strong>ca. 4'000 Stück in der ganzen Schweiz installiert</strong>.
@@ -548,7 +584,7 @@
   </section>
 
   <!-- ============ BEDIENUNG ============ -->
-  <section class="bedien">
+  <section class="bedien" id="bedienung">
     <div class="container">
 
       <div class="section-head section-head--narrow">
@@ -602,7 +638,6 @@
         <span class="bedien__functions-label">Integrierte Funktionen:</span>
         <div class="bedien__functions">
           <span><strong>Nachtbetrieb</strong> · leise &amp; energiesparend</span>
-          <span><strong>AUTO</strong> · höchster Komfort</span>
           <span><strong>Timer</strong> · programmierbarer Ein- und Ausschaltzeitpunkt</span>
           <span><strong>Dual-Power</strong> · schnelles Erreichen der Wunschtemperatur</span>
         </div>
@@ -616,7 +651,7 @@
     <div class="container">
 
       <div class="section-head">
-        <span class="kicker">Kürzlich installierte Klimageräte</span>
+        <span class="kicker">Referenzobjekte</span>
         <h2 class="h2">
           Hotels, Arztpraxen, Eigenheime —
           <span class="text-accent">in der ganzen Schweiz.</span>
@@ -680,7 +715,7 @@
       </div>
 
       <!-- Testimonials -->
-      <div class="testis">
+      <div class="testis" id="kundenstimmen">
         <span class="kicker">Das sagen unsere Kunden</span>
 
         <div class="testis__grid">
@@ -747,7 +782,7 @@
             <span class="text-accent">Portemonnaie zuliebe.</span>
           </h2>
           <p class="lead">
-            Im Gegensatz zu herkömmlichen Klimaanlagen (Ein-/Aus-Betrieb) passen Klimageräte mit Inverter-Technologie die Drehgeschwindigkeit des Kompressors — und somit die Kühlleistung — den vorherrschenden klimatischen Bedingungen an.
+            Die Inverter-Technologie (auch Wechselrichtertechnik genannt) bezeichnet ein elektronisches Verfahren zur stufenlosen Leistungsregelung von Elektromotoren oder Kompressoren. Anstatt ein Gerät ständig hart ein- und auszuschalten, passt ein Inverter den Energiebedarf exakt an die tatsächliche Belastung an.
           </p>
 
           <ul class="effizienz__benefits">
@@ -784,7 +819,7 @@
 
           <ul class="preis__list">
             <li>Ihr persönliches Wohlfühl-Klima an heissen Sommertagen</li>
-            <li>Eine Hausfassade, die genauso schön ist wie vor der Installation</li>
+            <li>Eine Hausfassade, die praktisch unverändert bleibt, da es kein Aussengerät braucht</li>
             <li>Rasche und einfache Installation ohne viel Schmutz</li>
             <li>Individuelle Bedienmöglichkeiten — von zu Hause und unterwegs</li>
             <li>Leiser Betrieb, damit Sie ungestört bleiben</li>
@@ -815,7 +850,7 @@
   </section>
 
   <!-- ============ ÜBER UNS ============ -->
-  <section class="about">
+  <section class="about" id="ueber-uns">
     <div class="container">
       <div class="about__grid">
         <figure class="about__photo">
@@ -832,24 +867,21 @@
           
           </h2>
           <p>
-            Philipp Egli gründete im Jahre 2007 das in Meggen (Kanton Luzern) ansässige Unternehmen Apitec AG. Noch heute ist Apitec ein inhabergeführtes Unternehmen. Der erfahrene Geschäftsführer und Inhaber ist bereits seit über <strong>25 Jahren in der Gebäudetechnikbranche</strong> tätig.
+            Philipp Egli gründete im Jahre 2007 das in Meggen (Kanton Luzern) ansässige Unternehmen Apitec AG. Noch heute ist Apitec ein inhabergeführtes Unternehmen. Der erfahrene Geschäftsführer und Inhaber ist bereits seit über <strong>30 Jahren in der Gebäudetechnikbranche</strong> tätig.
           </p>
           <p>
-            Unsere Mission ist es, qualitativ hochwertige Raumklima-Lösungen zu attraktiven Preisen anzubieten, damit möglichst viele Hitzegeplagte ihre Räume angenehm kühlen können.
+            Unsere Mission ist es, qualitativ hochwertige Raumklima-Lösungen zu attraktiven Preisen anzubieten.
           </p>
           <p>
-            Da wir um die Wichtigkeit einer professionellen Planung und Installation wissen, arbeiten wir ausnahmslos mit hochqualifizierten Profis, die ihr Handwerk verstehen. Jedes Gebäude ist anders — deshalb erhalten Sie eine persönliche und auf Ihre Bedürfnisse zugeschnittene Beratung.
+            Da wir um die Wichtigkeit einer professionellen Planung und Installation wissen, arbeiten wir ausnahmslos mit hochqualifizierten Profis, die ihr Handwerk verstehen. <strong>Jedes Gebäude ist anders — deshalb erhalten Sie eine persönliche und auf Ihre Bedürfnisse zugeschnittene Beratung.</strong>
           </p>
-          <div class="about__quote">
-            „Überzeugen Sie sich jetzt selbst vom Klimagerät X-One und besuchen Sie uns in unserem Ausstellungsraum in Meggen."
-          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ============ FAQ ============ -->
-  <section class="faq">
+  <section class="faq" id="faq">
     <div class="container">
       <div class="section-head section-head--narrow">
         <span class="kicker">Häufige Fragen</span>
@@ -871,7 +903,7 @@
         </details>
         <details>
           <summary>Was passiert, wenn der Raum zu gross ist?</summary>
-          <p>Wir empfehlen vor dem Einbau unbedingt eine exakte Kühllastberechnung. In zu grossen Räumen (über 40 m²) treten typische Probleme auf: kürzere Lebensdauer, weil der Kompressor dauernd auf höchster Stufe läuft; höhere Energiekosten und mehr Lärm — Aussengeräusche können Richtwerte übersteigen und zu Reklamationen führen; und vermehrt Kondenswasser, das ohne zusätzliche Bohrung für den Kondensatablauf überlaufen kann. Bei Fragen zur Projektierung unterstützen wir Sie gerne.</p>
+          <p>Wir empfehlen vor dem Einbau unbedingt eine exakte Kühllastberechnung. In zu grossen Räumen (über 40 m²) treten folgende Probleme auf: kürzere Lebensdauer, weil der Kompressor dauernd auf höchster Stufe läuft; höhere Energiekosten und mehr Lärm — Aussengeräusche können Richtwerte übersteigen und zu Reklamationen führen. Es gibt auch vermehrt Kondenswasser, und das Wasser in der Wanne vom Klimagerät kann ohne zusätzliche Bohrung für den Kondensatablauf überlaufen. Bei Fragen zur Projektierung unterstützen wir Sie gerne.</p>
         </details>
         <details>
           <summary>Wie laut ist das Gerät im Schlafzimmer?</summary>
@@ -882,8 +914,8 @@
           <p>In der Regel nicht — die Aussenwand bleibt visuell fast unverändert. Bei denkmalgeschützten Bauten klären wir das vorab mit der zuständigen Stelle.</p>
         </details>
         <details>
-          <summary>Wartet ihr auch Geräte anderer Marken?</summary>
-          <p>Ja. Wir bieten Service und Reparaturen auch für Fremdmarken von Klimageräten ohne Ausseneinheit an.</p>
+          <summary>Wartet Apitec auch Geräte anderer Marken?</summary>
+          <p>Ja. Die Partnerfirmen von Apitec bieten Service und Reparaturen auch für Fremdmarken von Klimageräten ohne Ausseneinheit an.</p>
         </details>
       </div>
     </div>
@@ -917,8 +949,8 @@
               <p><a href="mailto:info@apitec.ch">info@apitec.ch</a></p>
             </div>
             <div class="cta__info-block">
-              <span class="cta__col-label">Öffnungszeiten Ausstellungsraum</span>
-              <p>Mo–Fr 08.00–17.30<br>oder nach Vereinbarung</p>
+              <span class="cta__col-label">Öffnungszeiten</span>
+              <p>Mo–Fr 9.00–17.00 Uhr<br>*kein Ausstellungsraum!</p>
             </div>
             <a class="cta__phone" href="tel:+41412101500">
               <span class="cta__phone-icon" aria-hidden="true">
@@ -942,7 +974,6 @@
 
             <div class="form__head">
               <h3>Beratungsgespräch anfragen</h3>
-              <p>Wir melden uns innert eines Werktages bei Ihnen.</p>
             </div>
 
             <div class="form__row form__row--split">

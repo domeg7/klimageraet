@@ -10,17 +10,41 @@
   const navLinks = document.querySelector('.nav__links');
 
   if (burger && navLinks) {
+    const mqMobile = window.matchMedia('(max-width: 960px)');
+
+    function closeMenu() {
+      navLinks.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+      navLinks.querySelectorAll('.nav__item.open').forEach(i => i.classList.remove('open'));
+    }
+
     burger.addEventListener('click', () => {
       const open = navLinks.classList.toggle('open');
       burger.setAttribute('aria-expanded', open ? 'true' : 'false');
       document.body.style.overflow = open ? 'hidden' : '';
+      if (!open) navLinks.querySelectorAll('.nav__item.open').forEach(i => i.classList.remove('open'));
     });
 
+    // Akkordeon: Top-Eintrag mit Untermenü klappt auf Mobile auf statt zu navigieren
+    navLinks.querySelectorAll('.nav__item').forEach(item => {
+      const top = item.querySelector('.nav__top');
+      const drop = item.querySelector('.nav__drop');
+      if (!top || !drop) return;
+      top.addEventListener('click', (e) => {
+        if (mqMobile.matches) {
+          e.preventDefault();
+          const isOpen = item.classList.toggle('open');
+          top.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        }
+      });
+    });
+
+    // Menü schließen, wenn ein echter Ziel-Link angetippt wird
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-        burger.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
+        if (mqMobile.matches && link.classList.contains('nav__top')) return; // nur Akkordeon-Toggle
+        closeMenu();
       });
     });
   }
