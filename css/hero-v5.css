@@ -506,10 +506,44 @@ body {
 
   /* Menü bündig an die Nav-Unterkante (kein Video-Spalt) */
   .nav .nav__links {
-    position: absolute !important;
-    top: 100% !important;
+    position: fixed !important;
+    top: 54px !important;
     left: 0 !important;
     right: 0 !important;
+    width: 100vw !important;
+    box-sizing: border-box;
+    align-items: stretch;
+    max-height: calc(100dvh - 54px);
+    overflow-y: auto;
+    z-index: 999;
+  }
+
+  .nav .nav__links .nav__item,
+  .nav .nav__links .nav__top,
+  .nav .nav__links .nav__drop,
+  .nav .nav__links .nav__drop a {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .nav .nav__links .nav__item {
+    display: block;
+  }
+
+  .nav .nav__links .nav__top {
+    display: flex;
+  }
+
+  .nav .nav__links .nav__drop {
+    left: auto;
+    transform: none;
+    flex-direction: column;
+  }
+
+  .nav .nav__links .nav__drop a {
+    display: block;
+    color: #fff !important;
+    white-space: normal;
   }
 }
 
