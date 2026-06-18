@@ -97,7 +97,7 @@
   // reCaptcha v3 Site-Key (oeffentlich). Im Google reCaptcha Admin als
   // "reCAPTCHA v3" erstellen; den zugehoerigen Secret-Key ins Web3Forms-
   // Dashboard eintragen.
-  const RECAPTCHA_SITE_KEY = '6LeMUyYtAAAAANB8wJVjyRcJpIcF8a1atOf7QOKC';
+  const RECAPTCHA_SITE_KEY = '6LeTYiYtAAAAAEUQlHfkINCwU-3PA1-sYmG11BGG';
 
   const form = document.getElementById('contact-form');
   if (form) {
