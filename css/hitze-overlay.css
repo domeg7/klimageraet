@@ -8,8 +8,10 @@
   inset: 0;
   z-index: 1000;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  /* Scrollbar + per margin:auto auf der Karte zentriert. So bleibt die Karte
+     auch auf kleinen/kurzen Mobile-Screens vollständig erreichbar. */
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   padding: 24px;
   background: rgba(40, 4, 4, .72);
   backdrop-filter: blur(8px) saturate(140%);
@@ -28,6 +30,7 @@
   position: relative;
   width: 100%;
   max-width: 540px;
+  margin: auto;
   padding: 40px 36px 36px;
   border-radius: 22px;
   color: #fff;

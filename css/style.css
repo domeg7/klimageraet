@@ -409,6 +409,9 @@ button { font-family: inherit; }
 .nav__cta span { transition: transform .25s ease; }
 .nav__cta:hover span { transform: translateX(3px); }
 
+/* CTA im mobilen Menü — auf Desktop ausgeblendet, nur im Burger-Menü sichtbar */
+.nav__cta-mobile { display: none; }
+
 .nav__burger {
   display: none;
   background: none; border: 0;
@@ -2331,6 +2334,25 @@ button { font-family: inherit; }
     -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
   }
   .nav .nav__links.open .nav__top { color: #fff !important; }
+
+  /* CTA-Button im mobilen Menü */
+  .nav .nav__links .nav__cta-mobile {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: var(--s-3);
+    padding: 14px 20px;
+    background: var(--blue);
+    color: #fff !important;
+    border: 0;
+    border-radius: 999px;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+  }
+  .nav .nav__links .nav__cta-mobile:after { display: none; }
+  .nav .nav__links .nav__cta-mobile span { transition: transform .25s ease; }
   .nav .nav__links.open .nav__drop a,
   .nav .nav__links.open .nav__drop a:visited { color: #fff !important; }
   .nav .nav__links.open .nav__drop a:hover { color: #fff !important; }
