@@ -1985,6 +1985,22 @@ button { font-family: inherit; }
 }
 .form__hint svg { flex-shrink: 0; }
 
+/* reCAPTCHA v3 Badge ausblenden — der vorgeschriebene Hinweis steht
+   stattdessen im Formular (.form__recaptcha). */
+.grecaptcha-badge { visibility: hidden; }
+
+.form__recaptcha {
+  margin: 8px 0 0;
+  font-size: 11px;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.4);
+}
+.form__recaptcha a {
+  color: rgba(255,255,255,0.6);
+  text-decoration: underline;
+}
+.cta__form.is-sent .form__recaptcha { display: none; }
+
 /* Success state */
 .cta__form.is-sent .form__head,
 .cta__form.is-sent .form__row,
