@@ -123,16 +123,17 @@
       submitBtn.disabled = true;
 
       const formData = new FormData(form);
-      const payload = Object.fromEntries(formData.entries());
 
       try {
+        // FormData (multipart) statt JSON — so erkennt Web3Forms das
+        // hCaptcha-Token zuverlässig. Content-Type NICHT setzen, der
+        // Browser ergänzt die multipart-boundary automatisch.
         const res = await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
           headers: {
-            'Content-Type': 'application/json',
             'Accept': 'application/json'
           },
-          body: JSON.stringify(payload)
+          body: formData
         });
 
         const data = await res.json();
