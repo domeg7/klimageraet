@@ -1,0 +1,254 @@
+/* ============================================================
+   Hitze-Overlay — erscheint bei > 25 °C (Daten via Open-Meteo)
+   Rotes Design: "Es wird heiss."
+   ============================================================ */
+
+.hitze {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(40, 4, 4, .72);
+  backdrop-filter: blur(8px) saturate(140%);
+  -webkit-backdrop-filter: blur(8px) saturate(140%);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .45s ease, visibility .45s ease;
+}
+
+.hitze.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.hitze__card {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  padding: 40px 36px 36px;
+  border-radius: 22px;
+  color: #fff;
+  background:
+    radial-gradient(120% 90% at 0% 0%, rgba(255, 160, 60, .35), transparent 55%),
+    linear-gradient(160deg, #e2342a 0%, #b71414 55%, #7e0d0d 100%);
+  box-shadow:
+    0 28px 80px rgba(120, 8, 8, .55),
+    inset 0 1px 0 rgba(255, 255, 255, .18);
+  transform: translateY(18px) scale(.97);
+  transition: transform .45s cubic-bezier(.2, .8, .25, 1);
+  overflow: hidden;
+}
+
+.hitze.is-open .hitze__card {
+  transform: translateY(0) scale(1);
+}
+
+/* Glühender Hitze-Schimmer im Hintergrund der Karte */
+.hitze__card::after {
+  content: "";
+  position: absolute;
+  top: -40%;
+  right: -20%;
+  width: 70%;
+  height: 80%;
+  background: radial-gradient(circle, rgba(255, 210, 120, .4), transparent 70%);
+  pointer-events: none;
+}
+
+.hitze__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 2;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #fff;
+  background: rgba(255, 255, 255, .14);
+  transition: background .2s ease;
+}
+
+.hitze__close:hover {
+  background: rgba(255, 255, 255, .28);
+}
+
+.hitze__close svg {
+  width: 18px;
+  height: 18px;
+}
+
+.hitze__badge {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, .16);
+}
+
+.hitze__badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ffd27a;
+  box-shadow: 0 0 0 0 rgba(255, 210, 122, .7);
+  animation: hitze-pulse 1.8s infinite;
+}
+
+@keyframes hitze-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(255, 210, 122, .7); }
+  70%  { box-shadow: 0 0 0 10px rgba(255, 210, 122, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 210, 122, 0); }
+}
+
+.hitze__title {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 6px;
+  font-size: clamp(2rem, 6vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1.05;
+}
+
+.hitze__now {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 10px 0 20px;
+}
+
+.hitze__now-temp {
+  font-size: clamp(2.6rem, 9vw, 3.6rem);
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.hitze__now-meta {
+  font-size: 14px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, .85);
+}
+
+.hitze__forecast {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.hitze__day {
+  padding: 12px 8px;
+  border-radius: 14px;
+  text-align: center;
+  background: rgba(255, 255, 255, .12);
+  border: 1px solid rgba(255, 255, 255, .14);
+}
+
+.hitze__day-name {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .03em;
+  opacity: .85;
+  margin-bottom: 4px;
+}
+
+.hitze__day-icon {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.hitze__day-temp {
+  display: block;
+  margin-top: 6px;
+  font-size: 17px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.hitze__lead {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 22px;
+  font-size: 16px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, .92);
+}
+
+.hitze__cta {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  justify-content: center;
+  padding: 15px 24px;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #b71414;
+  background: #fff;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.hitze__cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, .25);
+}
+
+.hitze__cta .btn__arrow {
+  transition: transform .2s ease;
+}
+
+.hitze__cta:hover .btn__arrow {
+  transform: translateX(4px);
+}
+
+.hitze__dismiss {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  margin-top: 14px;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: rgba(255, 255, 255, .8);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.hitze__dismiss:hover {
+  color: #fff;
+}
+
+@media (max-width: 480px) {
+  .hitze__card { padding: 34px 22px 26px; }
+  .hitze__forecast { gap: 7px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hitze, .hitze__card, .hitze__badge-dot { transition: none; animation: none; }
+}

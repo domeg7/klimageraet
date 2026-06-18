@@ -31,6 +31,7 @@
 
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/hero-v5.css">
+<link rel="stylesheet" href="css/hitze-overlay.css">
 <style>
   /* Inline-Overrides: kein Cache-Problem, höchste Priorität */
   html, body { background: #04080e !important; }
@@ -861,7 +862,7 @@
           </a>
           <span class="preis__season">
             <span class="badge__dot badge__dot--lime"></span>
-            Die Saison beginnt bald — frühzeitig vereinbaren lohnt sich.
+            In wenigen Tagen geniessen Sie angenehm kühle Temperaturen.
           </span>
         </aside>
 
@@ -945,12 +946,12 @@
   <section class="cta" id="kontakt">
     <div class="container">
       <div class="cta__inner">
-        <span class="kicker kicker--light">Die Saison beginnt bald!</span>
+        <span class="kicker kicker--light">Angenehme Temperaturen trotz Hitze</span>
         <h2 class="h2 h2--light">
           Unverbindliches Beratungsgespräch
           <span class="text-accent-lime">vereinbaren.</span>
         </h2>
-        <p class="cta__sub">Es lohnt sich, einen frühzeitigen Termin für die Beratung zu vereinbaren.</p>
+        <p class="cta__sub">Vereinbaren Sie jetzt einen Termin und geniessen Sie schon in wenigen Tagen angenehm kühle Temperaturen.</p>
 
         <div class="cta__card">
           <div class="cta__info">
@@ -1092,6 +1093,43 @@
     </div>
   </div>
 </footer>
+
+<!-- ============ HITZE-OVERLAY (erscheint bei > 25 °C, Daten via Open-Meteo) ============ -->
+<div class="hitze" id="hitze-overlay" role="dialog" aria-modal="true" aria-labelledby="hitze-title" hidden>
+  <div class="hitze__card">
+    <button class="hitze__close" type="button" aria-label="Schliessen" data-hitze-close>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <path d="M18 6 6 18M6 6l12 12"/>
+      </svg>
+    </button>
+
+    <span class="hitze__badge">
+      <span class="hitze__badge-dot" aria-hidden="true"></span>
+      Hitzewarnung · Luzern
+    </span>
+
+    <h2 class="hitze__title" id="hitze-title">Es wird heiss.</h2>
+
+    <div class="hitze__now">
+      <span class="hitze__now-temp" data-hitze-now>–</span>
+      <span class="hitze__now-meta" data-hitze-meta>Aktuelle Temperatur in Luzern</span>
+    </div>
+
+    <div class="hitze__forecast" data-hitze-forecast aria-label="Wettervorschau der nächsten Tage"></div>
+
+    <p class="hitze__lead">
+      Vereinbaren Sie jetzt ein Beratungsgespräch und geniessen Sie schon
+      in wenigen Tagen angenehm kühle Temperaturen — mit dem X-One Klimagerät ohne Ausseneinheit.
+    </p>
+
+    <a class="hitze__cta" href="#kontakt" data-hitze-close>
+      Jetzt Beratungsgespräch vereinbaren
+      <span class="btn__arrow" aria-hidden="true">→</span>
+    </a>
+
+    <button class="hitze__dismiss" type="button" data-hitze-close>Später vielleicht</button>
+  </div>
+</div>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
