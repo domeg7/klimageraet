@@ -381,7 +381,7 @@ body {
 
 .effizienz__grid {
   display: grid;
-  grid-template-columns: 1fr 1.05fr;
+  grid-template-columns: 1.05fr 1fr;
   gap: var(--s-6);
   align-items: center;
 }
@@ -439,6 +439,7 @@ body {
     grid-template-columns: 1fr;
     gap: var(--s-5);
   }
+  .effizienz__visual { order: -1; }
 }
 
 /* ── Prinzip: Tech-Werte rechtsbündig ── */

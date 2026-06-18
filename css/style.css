@@ -657,53 +657,25 @@ button { font-family: inherit; }
   padding: var(--s-7) 0;
   background: var(--bg-soft);
 }
-.problem__grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--s-6);
-  align-items: start;
-}
-.problem__head .kicker { color: var(--warm); }
-.problem__head .kicker:before { background: var(--warm); }
-.problem__head .h2 .text-accent { color: var(--warm); }
-
-.problem__list p {
-  font-size: 17px;
-  color: var(--gray-7);
-  margin: 0 0 var(--s-3);
-  line-height: 1.65;
-}
-.problem__list ul {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 var(--s-3);
+.problem__inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  align-items: center;
+  gap: var(--s-4);
 }
-.problem__list ul li {
-  position: relative;
-  padding-left: 30px;
-  font-size: 16.5px;
-  color: var(--ink-2);
+.problem__inner .h2 { margin: 0; }
+.problem__question .text-accent { color: var(--warm); }
+
+.problem__solution {
+  font-size: clamp(28px, 4.2vw, 52px);
 }
-.problem__list ul li:before {
-  content: "";
-  position: absolute;
-  left: 0; top: 9px;
-  width: 18px; height: 18px;
-  background: var(--warm);
-  border-radius: 4px;
-  background-image: linear-gradient(135deg, transparent 38%, white 38%, white 44%, transparent 44%, transparent 56%, white 56%, white 62%, transparent 62%);
-}
-.problem__answer {
-  margin-top: var(--s-3) !important;
-  padding: 20px 24px;
-  background: var(--blue-soft);
-  border-left: 3px solid var(--blue);
-  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-  color: var(--ink) !important;
-  font-weight: 600 !important;
+.problem__solution .text-accent {
+  color: var(--blue);
+  font-weight: 800;
+  white-space: nowrap;
 }
 
 /* =========================================================
@@ -944,6 +916,20 @@ button { font-family: inherit; }
   font-size: 15px;
   color: rgba(255,255,255,0.7);
   line-height: 1.6;
+}
+
+/* =========================================================
+   INSTALLATION
+   ========================================================= */
+.installation {
+  padding: var(--s-7) 0;
+  background: var(--blue-soft);
+}
+.installation .lead {
+  margin-bottom: 0;
+}
+.installation .lead strong {
+  color: var(--ink);
 }
 
 /* =========================================================
@@ -2252,7 +2238,6 @@ button { font-family: inherit; }
   .about__photo { max-width: 480px; }
   .cta__card { grid-template-columns: 1fr; gap: var(--s-4); }
   .footer__grid { grid-template-columns: 1fr 1fr; }
-  .problem__grid { grid-template-columns: 1fr; gap: var(--s-3); }
 }
 
 /* ---- Nav: mobile mode bereits ab 960px ---- */
