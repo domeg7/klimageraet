@@ -94,8 +94,22 @@
   });
 
   // ---------- Contact form (Web3Forms) ----------
+  // reCaptcha v3 Site-Key (oeffentlich). Im Google reCaptcha Admin als
+  // "reCAPTCHA v3" erstellen; den zugehoerigen Secret-Key ins Web3Forms-
+  // Dashboard eintragen.
+  const RECAPTCHA_SITE_KEY = '6LeMUyYtAAAAANB8wJVjyRcJpIcF8a1atOf7QOKC';
+
   const form = document.getElementById('contact-form');
   if (form) {
+    // reCaptcha v3 Script dynamisch laden, sobald ein Site-Key gesetzt ist.
+    if (RECAPTCHA_SITE_KEY && !RECAPTCHA_SITE_KEY.startsWith('YOUR_')) {
+      const rc = document.createElement('script');
+      rc.src = 'https://www.google.com/recaptcha/api.js?render=' + RECAPTCHA_SITE_KEY;
+      rc.async = true;
+      rc.defer = true;
+      document.head.appendChild(rc);
+    }
+
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
@@ -111,22 +125,22 @@
         return;
       }
 
-      // hCaptcha — require a solved challenge
-      const captchaToken = form.querySelector('[name="h-captcha-response"]')?.value;
-      if (!captchaToken) {
-        showToast('Bitte bestätigen Sie das Captcha, bevor Sie die Anfrage senden.');
-        return;
-      }
-
       const submitBtn = form.querySelector('[data-submit]');
       submitBtn.classList.add('is-loading');
       submitBtn.disabled = true;
 
-      const formData = new FormData(form);
-
       try {
-        // FormData (multipart) statt JSON — so erkennt Web3Forms das
-        // hCaptcha-Token zuverlässig. Content-Type NICHT setzen, der
+        // reCaptcha v3 — frisches Token direkt vor dem Senden erzeugen
+        // (Token sind nur ~2 Min. gueltig) und ins Hidden-Feld schreiben.
+        if (typeof grecaptcha !== 'undefined') {
+          await new Promise((resolve) => grecaptcha.ready(resolve));
+          const token = await grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: 'contact' });
+          form.querySelector('#recaptchaResponse').value = token;
+        }
+
+        const formData = new FormData(form);
+
+        // FormData (multipart) statt JSON. Content-Type NICHT setzen, der
         // Browser ergänzt die multipart-boundary automatisch.
         const res = await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
@@ -147,7 +161,6 @@
       } catch (err) {
         submitBtn.classList.remove('is-loading');
         submitBtn.disabled = false;
-        if (window.hcaptcha) window.hcaptcha.reset();
         showToast('Senden fehlgeschlagen. Bitte versuchen Sie es erneut oder rufen Sie uns direkt an: 041 210 15 00.');
       }
     });

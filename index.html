@@ -1033,7 +1033,7 @@
               <span>Ich bin einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage verwendet werden. <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutz</a>.</span>
             </label>
 
-            <div class="h-captcha" data-captcha="true"></div>
+            <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
 
             <button type="submit" class="btn btn--primary btn--lime btn--block" data-submit>
               <span class="btn__label">Anfrage senden</span>
@@ -1095,7 +1095,6 @@
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script src="https://js.hcaptcha.com/1/api.js" async defer></script>
 <script src="js/main.js"></script>
 <script>
   /* ── Hero V5: Nav-Glassmorphism beim Scrollen ── */
