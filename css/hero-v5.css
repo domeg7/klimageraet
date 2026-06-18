@@ -299,13 +299,13 @@ body {
 /* ── Raumgrösse / Projektierung ── */
 .raumgroesse {
   padding: var(--s-6) 0;
-  background: var(--bg);
+  background: var(--bg-soft);
 }
 
 .raumgroesse__card {
   max-width: 1180px;
   margin: 0 auto;
-  background: var(--bg-soft);
+  background: #FFFFFF;
   border: 1px solid var(--gray-2);
   border-radius: var(--radius-lg);
   padding: clamp(28px, 4vw, 56px);

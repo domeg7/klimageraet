@@ -111,6 +111,13 @@
         return;
       }
 
+      // hCaptcha — require a solved challenge
+      const captchaToken = form.querySelector('[name="h-captcha-response"]')?.value;
+      if (!captchaToken) {
+        showToast('Bitte bestätigen Sie das Captcha, bevor Sie die Anfrage senden.');
+        return;
+      }
+
       const submitBtn = form.querySelector('[data-submit]');
       submitBtn.classList.add('is-loading');
       submitBtn.disabled = true;
@@ -139,6 +146,7 @@
       } catch (err) {
         submitBtn.classList.remove('is-loading');
         submitBtn.disabled = false;
+        if (window.hcaptcha) window.hcaptcha.reset();
         showToast('Senden fehlgeschlagen. Bitte versuchen Sie es erneut oder rufen Sie uns direkt an: 041 210 15 00.');
       }
     });

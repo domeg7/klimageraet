@@ -652,7 +652,7 @@ button { font-family: inherit; }
    ========================================================= */
 .problem {
   padding: var(--s-7) 0;
-  background: var(--bg);
+  background: var(--bg-soft);
 }
 .problem__grid {
   display: grid;
@@ -708,7 +708,7 @@ button { font-family: inherit; }
    ========================================================= */
 .video {
   padding: var(--s-7) 0 var(--s-6);
-  background: var(--bg);
+  background: var(--bg-soft);
 }
 .video__wrap {
   position: relative;
@@ -948,7 +948,7 @@ button { font-family: inherit; }
    ========================================================= */
 .prinzip {
   padding: var(--s-7) 0;
-  background: var(--bg);
+  background: var(--bg-soft);
 }
 .prinzip__grid {
   display: grid;
@@ -1150,7 +1150,7 @@ button { font-family: inherit; }
    ========================================================= */
 .bedien {
   padding: var(--s-7) 0;
-  background: var(--bg);
+  background: var(--bg-soft);
 }
 
 .bedien__cards {
@@ -1233,7 +1233,7 @@ button { font-family: inherit; }
 }
 
 .bedien-card--featured {
-  background: linear-gradient(180deg, var(--blue-soft) 0%, white 100%);
+  background: white;
   border-color: var(--blue);
 }
 .bedien-card--featured .bedien-card__body h3 { color: var(--blue-deep); }
@@ -1436,7 +1436,7 @@ button { font-family: inherit; }
    ========================================================= */
 .preis {
   padding: var(--s-7) 0;
-  background: var(--bg);
+  background: var(--bg-soft);
 }
 .preis__grid {
   display: grid;
@@ -1617,7 +1617,7 @@ button { font-family: inherit; }
    ========================================================= */
 .faq {
   padding: var(--s-7) 0;
-  background: var(--bg);
+  background: var(--bg-soft);
 }
 .faq__list {
   max-width: 880px;

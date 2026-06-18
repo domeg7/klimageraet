@@ -102,6 +102,68 @@
         "availability": "https://schema.org/InStock",
         "seller": { "@id": "https://das-klimageraet.ch/#business" }
       }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://das-klimageraet.ch/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Wie viel kostet ein X-One Klimagerät?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "CHF 3'050.– pro Gerät (Stückpreis exkl. MwSt.). Kosten für Bohrung, Installation und Wartung offerieren wir separat auf Anfrage."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie lange dauert die Installation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pro Gerät rund zwei Stunden. Wir achten darauf, dass möglichst wenig Staub entsteht und der laufende Betrieb nicht beeinträchtigt wird."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Für welche Raumgrösse ist das Gerät geeignet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mit 2.3 kW (max. 3.1 kW) Kühlleistung für Räume bis rund 40 m². Bei grösseren Räumen empfehlen wir vorab eine Kühllastberechnung."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was passiert, wenn der Raum zu gross ist?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Wir empfehlen vor dem Einbau unbedingt eine exakte Kühllastberechnung. In zu grossen Räumen (über 40 m²) treten folgende Probleme auf: kürzere Lebensdauer, weil der Kompressor dauernd auf höchster Stufe läuft; höhere Energiekosten und mehr Lärm — Aussengeräusche können Richtwerte übersteigen und zu Reklamationen führen. Es gibt auch vermehrt Kondenswasser, und das Wasser in der Wanne vom Klimagerät kann ohne zusätzliche Bohrung für den Kondensatablauf überlaufen. Bei Fragen zur Projektierung unterstützen wir Sie gerne."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie laut ist das Gerät im Schlafzimmer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Im Nachtbetrieb läuft es so leise, dass es im Schlafzimmer eingesetzt werden kann. Die Inverter-Technik regelt die Drehzahl des Kompressors fein."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Brauche ich eine Bewilligung?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In der Regel nicht — die Aussenwand bleibt visuell fast unverändert. Bei denkmalgeschützten Bauten klären wir das vorab mit der zuständigen Stelle."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wartet Apitec auch Geräte anderer Marken?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Die Partnerfirmen von Apitec bieten Service und Reparaturen auch für Fremdmarken von Klimageräten ohne Ausseneinheit an."
+          }
+        }
+      ]
     }
   ]
 }
@@ -125,7 +187,6 @@
           <a href="#produkt">6 Gründe</a>
           <a href="#effizienz">−30 % Strom</a>
           <a href="#prinzip">Fassade</a>
-          <a href="#installation">Installation</a>
           <a href="#bedienung">3 Wege</a>
         </div>
       </div>
@@ -264,22 +325,6 @@
         </div>
       </div>
 
-    </div>
-
-    <!-- Featured-in strip -->
-    <div class="hero-v5__featured">
-      <span class="hero-v5__featured-label">Im Einsatz bei</span>
-      <div class="hero-v5__featured-logos">
-        <span>Eurotel Montreux</span>
-        <span class="dot">·</span>
-        <span>Hotel Bellerive Lausanne</span>
-        <span class="dot">·</span>
-        <span>ACORUS Treuhand</span>
-        <span class="dot">·</span>
-        <span>Bättig &amp; Bucher Immobilien</span>
-        <span class="dot">·</span>
-        <span>Go2Nails Beauty Lounge</span>
-      </div>
     </div>
 
   </section>
@@ -555,31 +600,6 @@
           </dl>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ============ INSTALLATION ============ -->
-  <section class="install" id="installation">
-    <div class="container">
-
-      <div class="section-head section-head--narrow">
-        <span class="kicker">Installation</span>
-        <h2 class="h2">
-          So einfach und schnell konnten Sie Ihre Räume
-          <span class="text-accent">noch nie kühlen.</span>
-        </h2>
-        <p class="lead">
-          Bei uns bekommen Sie alle Leistungen, die Sie für ein angenehmes Raumklima benötigen, aus einer Hand. Ihr Gerät ist in der Regel <strong>innerhalb 2 Stunden installiert</strong>. Wir achten darauf, dass bei den Montagearbeiten möglichst wenig Staub und Schmutz entsteht und der laufende Betrieb nicht beeinträchtigt wird.
-        </p>
-      </div>
-
-      <figure class="install__infographic">
-        <img
-          src="assets/images/190603_Infographic_Website-min-e1559900070609.png"
-          alt="Installation in 4 Schritten: 1. Zwei Bohrungen in der Aussenwand, 2. Montagevorrichtung befestigen, 3. Klimagerät aufhängen, 4. Kabel an Steckdose anschliessen"
-          loading="lazy">
-      </figure>
-
     </div>
   </section>
 
@@ -1010,8 +1030,10 @@
 
             <label class="field field--check">
               <input type="checkbox" name="consent" required>
-              <span>Ich bin einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage verwendet werden. <a href="#" data-not-implemented="Datenschutz">Datenschutz</a>.</span>
+              <span>Ich bin einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage verwendet werden. <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutz</a>.</span>
             </label>
+
+            <div class="h-captcha" data-sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"></div>
 
             <button type="submit" class="btn btn--primary btn--lime btn--block" data-submit>
               <span class="btn__label">Anfrage senden</span>
@@ -1045,7 +1067,6 @@
         <h4>Seite</h4>
         <a href="#produkt">Produkt</a>
         <a href="#einsatz">Einsatz</a>
-        <a href="#installation">Installation</a>
         <a href="#referenzen">Referenzen</a>
         <a href="#preis">Preis</a>
       </nav>
@@ -1074,6 +1095,7 @@
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+<script src="https://js.hcaptcha.com/1/api.js" async defer></script>
 <script src="js/main.js"></script>
 <script>
   /* ── Hero V5: Nav-Glassmorphism beim Scrollen ── */
