@@ -229,8 +229,8 @@
   }, { passive: true });
 
   // ---------- Hitze-Overlay (Wetter via Open-Meteo) ----------
-  // Zeigt bei aktueller Temperatur über 25 °C ein rotes Overlay mit der
-  // Wettervorschau und dem CTA zum Beratungsgespräch. Open-Meteo ist
+  // Zeigt ein rotes Overlay mit Wettervorschau und CTA zum Beratungsgespräch,
+  // wenn der Höchstwert der Vorhersage für heute über 30 °C liegt. Open-Meteo ist
   // kostenlos und benötigt keinen API-Key. Standort: Luzern.
   (function initHitzeOverlay() {
     const overlay = document.getElementById('hitze-overlay');
@@ -323,14 +323,18 @@
     fetch(url)
       .then(res => res.ok ? res.json() : Promise.reject(new Error('Wetter-API nicht erreichbar')))
       .then(data => {
-        const tempNow = data && data.current && data.current.temperature_2m;
-        if (typeof tempNow !== 'number') return;
+        // Entscheidend ist die Vorhersage für heute (Tageshöchstwert),
+        // nicht die momentane Temperatur – morgens ist es noch kühl,
+        // obwohl der Tag über 30 °C bringt.
+        const todayMax = data && data.daily && data.daily.temperature_2m_max
+          && data.daily.temperature_2m_max[0];
+        if (typeof todayMax !== 'number') return;
 
-        // Nur bei Hitze einblenden.
-        if (tempNow <= HITZE_SCHWELLE) return;
+        // Nur einblenden, wenn die Vorhersage für heute über der Schwelle liegt.
+        if (todayMax <= HITZE_SCHWELLE) return;
 
-        if (nowEl) nowEl.textContent = `${Math.round(tempNow)}°C`;
-        if (metaEl) metaEl.textContent = 'Aktuelle Temperatur in Luzern';
+        if (nowEl) nowEl.textContent = `${Math.round(todayMax)}°C`;
+        if (metaEl) metaEl.textContent = 'Höchstwert heute in Luzern';
         renderForecast(data.daily);
 
         openOverlay();
